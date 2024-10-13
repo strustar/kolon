@@ -133,9 +133,11 @@ def sidebar():
 
         # 사이드바에 프롬프트 입력 영역 생성
         st.write('---')
-        if st.button('**:orange[버튼을 누르면 아래 프롬프트가 복사됩니다. 옆의 채팅창에 붙여넣기 하세요]**'):
-            pyperclip.copy(default_prompt)
-            st.success("프롬프트가 클립보드에 복사되었습니다!")
-        prompt = st.text_area("프롬프트 입력:", value=default_prompt, height=300, label_visibility='collapsed')
+        # if st.button('**:orange[⧉버튼을 누르면 아래 프롬프트가 복사됩니다. 옆의 채팅창에 붙여넣기 하세요]**'):
+        #     pyperclip.copy(default_prompt)
+        #     st.success("프롬프트가 클립보드에 복사되었습니다!")
+        # prompt = st.text_area("프롬프트 입력:", value=default_prompt, height=300, label_visibility='collapsed')
+        st.write('**:orange[아래 우측 상단 ⧉ 버튼을 누르면 아래 프롬프트가 복사됩니다. 옆의 채팅창에 붙여넣기 하세요]**')
+        st.code(default_prompt, language='text')
 
     return clear_btn, uploaded_file, threshold, search_k, selected_model
